@@ -10,11 +10,7 @@ const ThemeButton = () => {
         let themeArr = Object.keys(themeStyles);
         
         let currentIndex = themeArr.indexOf(theme.currentTheme);
-        if(currentIndex === themeArr.length-1){
-            theme.setCurrentTheme(themeArr[0])
-        } else {
-            theme.setCurrentTheme(themeArr[currentIndex+1])
-        }
+        theme.setCurrentTheme(themeArr[(currentIndex + 1) % themeArr.length])
     }
     return (
         <>

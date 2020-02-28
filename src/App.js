@@ -1,12 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import {Routes} from './Components/Routes';
+import ThemeContext from './Components/ThemeContext';
+import themeStyles from './Components/styles/themeStyles';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+  
+  // let theme = useContext(ThemeContext);
+
   return (
     <div className="App">
-      <Routes/>
+      <ThemeContext.Provider value={{currentTheme:theme, setCurrentTheme:(themeName)=>setTheme(themeName)}}>
+        <Routes/>
+      </ThemeContext.Provider>
     </div>
   );
 }

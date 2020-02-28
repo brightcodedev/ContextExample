@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{ useContext } from 'react'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './Home/Body';
 import About from './About/Body';
 import MainHeader from './MainHeader';
+import themeStyles from './styles/themeStyles';
 
 
 export const Routes = () => {
